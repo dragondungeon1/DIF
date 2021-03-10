@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+{#    {% for product in products %}#}
+{#        {% for specification in product.specifications %}#}
+{#        {% endfor %}#}
+{#    {% else %}#}
+{#    {% endfor %}#}
+
+
+    {% for product in products %}
+
+    <div class="d-flex justify-content-center container mt-5">
+        <div class="card p-3 bg-white"><i class="fa fa-apple"></i>
+            <div class="about-product text-center mt-2"><img src={{ product.img }} width="250">
+                <div>
+                    <h4>{{ product.prodname }}</h4>
+                    <br>
+                    <h6 class="mt-0 text-black-50">{{product.description}}</h6>
+                    <br>
+                </div>
+            </div>
+            <div class="stats mt-2">
+                <div class="d-flex justify-content-between p-price"><span>{{product.price}}</span><span>€</span></div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
