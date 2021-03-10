@@ -34,6 +34,21 @@ class RapportController extends AbstractController
 
 
     /**
+     * @Route("/frontreport", name="front_report")
+     */
+    public function frontReport(RapportRepository $rapportRepository): Response
+    {
+        $rapport = $rapportRepository->findAll();
+
+        return $this->render('rapport/front.html.twig', [
+            'controller_name' => 'RapportController',
+            'rapports' => $rapport,
+        ]);
+    }
+
+
+
+    /**
      * @Route("/", name="rapport_index", methods={"GET"})
      * @Security("is_granted(['ROLE_ADMIN', 'ROLE_BOEKHOUDER'])")
 
@@ -117,19 +132,6 @@ class RapportController extends AbstractController
     }
 
 
-    /**
-     * @Route("/rapporten", name="rapporten")
-     */
-    public function front(): Response
-    {
-        $this->session();
-        $rapport = $this->em->getRepository(Rapport::class)->findAll();
-
-        return $this->render('rapport/front.html.twig', [
-            'controller_name' => 'RapportController',
-            'rapport' => $rapport,
-        ]);
-    }
 
 
 
