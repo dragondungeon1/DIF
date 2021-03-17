@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c0a19e4d-da33-4b9d-a85f-0b09a15dae78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -155,6 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615972546085</updated>
       <workItem from="1615972547250" duration="8692000" />
+      <workItem from="1615997352307" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="added fich uploader">
       <created>1615977308063</created>
@@ -170,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615983268768</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed the vich uploader and added an entity">
+      <created>1615997379709</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615997379709</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,14 +193,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615982247963" />
-    <state x="499" y="114" key="CommitChangelistDialog2" timestamp="1615983268318">
+    <state x="499" y="114" key="CommitChangelistDialog2" timestamp="1615997378682">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="499" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615983268318" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1615977312846">
+    <state x="499" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615997378682" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1615997396621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615977312846" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615997396621" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1615997353344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

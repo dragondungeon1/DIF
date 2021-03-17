@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Factuur{% endblock %}
+
+{% block body %}
+    <h1>Factuur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ factuur.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ factuur.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ factuur.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if is_granted('ROLE_ADMIN') == true %}
+        <a href="{{ path('factuur_index') }}">back to list</a>
+
+        <a href="{{ path('factuur_edit', {'id': factuur.id}) }}">edit</a>
+
+        {{ include('factuur/_delete_form.html.twig') }}
+
+    {% endif %}
+
+
+
+{% endblock %}
