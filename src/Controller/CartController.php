@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Factuur;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -36,6 +37,21 @@ class CartController extends AbstractController
         return $this->render('cart/index.html.twig', [
             'controller_name' => 'CartController',
             'products' => $products,
+        ]);
+    }
+
+
+    /**
+     * @Route("/facturen", name="facturen")
+     */
+    public function front(): Response
+    {
+        $this->session();
+        $factuurs = $this->em->getRepository(Factuur::class)->findAll();
+
+        return $this->render('factuur/front.html.twig', [
+            'controller_name' => 'FactuurController',
+            'factuurs' => $factuurs,
         ]);
     }
 

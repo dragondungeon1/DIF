@@ -34,8 +34,17 @@
                         <a class="nav-link active" aria-current="page" href="{{ '/' }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ '/product' }}">Products</a>
+                        <a class="nav-link" href="{{ '/products' }}">Products</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ '/rapport/frontreport' }}">Rapporten</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ '/facturen' }}">Facturen</a>
+                    </li>
+
                     {% if app.user %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ '/logout' }}">Logout</a>
@@ -45,9 +54,6 @@
                             <a class="nav-link" href="{{ '/login' }}">Login</a>
                         </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ '/rapport/frontreport' }}">Rapporten</a>
-                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
