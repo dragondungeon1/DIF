@@ -14,6 +14,7 @@ class RapportType extends AbstractType
         $builder
             ->add('naam')
             ->add('tekst')
+            ->add('img')
         ;
     }
 

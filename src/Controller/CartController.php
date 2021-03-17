@@ -26,7 +26,7 @@ class CartController extends AbstractController
 
 
     /**
-     * @Route("/products", name="cart")
+     * @Route("/products", name="products")
      */
     public function index(): Response
     {
