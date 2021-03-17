@@ -35,6 +35,8 @@ class RapportController extends AbstractController
 
     /**
      * @Route("/frontreport", name="front_report")
+     * @param RapportRepository $rapportRepository
+     * @return Response
      */
     public function frontReport(RapportRepository $rapportRepository): Response
     {
@@ -47,11 +49,11 @@ class RapportController extends AbstractController
     }
 
 
-
     /**
      * @Route("/", name="rapport_index", methods={"GET"})
      * @Security("is_granted(['ROLE_ADMIN', 'ROLE_BOEKHOUDER'])")
-
+     * @param RapportRepository $rapportRepository
+     * @return Response
      */
     public function index(RapportRepository $rapportRepository): Response
     {
@@ -63,6 +65,8 @@ class RapportController extends AbstractController
     /**
      * @Route("/new", name="rapport_new", methods={"GET","POST"})
      * @Security("is_granted(['ROLE_ADMIN', 'ROLE_BOEKHOUDER'])")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -87,6 +91,8 @@ class RapportController extends AbstractController
     /**
      * @Route("/{id}", name="rapport_show", methods={"GET"})
      * @Security("is_granted(['ROLE_ADMIN', 'ROLE_BOEKHOUDER'])")
+     * @param Rapport $rapport
+     * @return Response
      */
     public function show(Rapport $rapport): Response
     {
@@ -98,6 +104,9 @@ class RapportController extends AbstractController
     /**
      * @Route("/{id}/edit", name="rapport_edit", methods={"GET","POST"})
      * @Security("is_granted(['ROLE_ADMIN', 'ROLE_BOEKHOUDER'])")
+     * @param Request $request
+     * @param Rapport $rapport
+     * @return Response
      */
     public function edit(Request $request, Rapport $rapport): Response
     {
@@ -119,6 +128,9 @@ class RapportController extends AbstractController
     /**
      * @Route("/{id}", name="rapport_delete", methods={"DELETE"})
      * @Security("is_granted(['ROLE_ADMIN', 'ROLE_BOEKHOUDER'])")
+     * @param Request $request
+     * @param Rapport $rapport
+     * @return Response
      */
     public function delete(Request $request, Rapport $rapport): Response
     {

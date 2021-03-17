@@ -3,9 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Product;
-use App\Form\ProductType;
+use App\Form\Product1Type;
 use App\Repository\ProductRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +17,6 @@ class ProductController extends AbstractController
 {
     /**
      * @Route("/", name="product_index", methods={"GET"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function index(ProductRepository $productRepository): Response
     {
@@ -29,12 +27,11 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/new", name="product_new", methods={"GET","POST"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function new(Request $request): Response
     {
         $product = new Product();
-        $form = $this->createForm(ProductType::class, $product);
+        $form = $this->createForm(Product1Type::class, $product);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +50,6 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/{id}", name="product_show", methods={"GET"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function show(Product $product): Response
     {
@@ -64,11 +60,10 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="product_edit", methods={"GET","POST"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function edit(Request $request, Product $product): Response
     {
-        $form = $this->createForm(ProductType::class, $product);
+        $form = $this->createForm(Product1Type::class, $product);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -85,7 +80,6 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/{id}", name="product_delete", methods={"DELETE"})
-     * @Security("is_granted('ROLE_ADMIN')")
      */
     public function delete(Request $request, Product $product): Response
     {

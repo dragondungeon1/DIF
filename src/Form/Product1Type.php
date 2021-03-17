@@ -6,16 +6,20 @@ use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
-class ProductType extends AbstractType
+
+class Product1Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('prodname')
-            ->add('description')
-            ->add('img')
+            ->add('name')
             ->add('price')
+            ->add('description')//
+            //->add('imageName')
+            ->add('imageFile', VichImageType::class)
+
         ;
     }
 

@@ -3,12 +3,23 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
+//use Symfony\Component\HttpFoundation\File\UploadedFile;
+//use Vich\UploaderBundle\Entity\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\HttpFoundation\File\File;
+
+
+
 
 /**
- * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\ProductRepository", repositoryClass=ProductRepository::class)
+ * @Vich\Uploadable
+
  */
 class Product
 {
@@ -22,46 +33,75 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prodname;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $description;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $img;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Specification::class, mappedBy="product")
-     */
-    private $Specification;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $price;
 
-    public function __construct()
-    {
-        $this->Specification = new ArrayCollection();
-    }
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="product", fileNameProperty="imageName", size="imageSize")
+     *
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $imageName;
+
+    /**
+     * @ORM\Column(type="integer")
+     *
+     * @var integer
+     */
+    private $imageSize;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var DateTime
+     */
+    private $updatedAt;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getProdname(): ?string
+    public function getName(): ?string
     {
-        return $this->prodname;
+        return $this->name;
     }
 
-    public function setProdname(string $prodname): self
+    public function setName(string $name): self
     {
-        $this->prodname = $prodname;
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
@@ -78,57 +118,49 @@ class Product
         return $this;
     }
 
-    public function getImg(): ?string
-    {
-        return $this->img;
-    }
-
-    public function setImg(string $img): self
-    {
-        $this->img = $img;
-
-        return $this;
-    }
-
     /**
-     * @return Collection|Specification[]
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
+     * @throws Exception
      */
-    public function getSpecification(): Collection
+    public function setImageFile(?File $imageFile = null): void
     {
-        return $this->Specification;
-    }
+        $this->imageFile = $imageFile;
 
-    public function addSpecification(Specification $specification): self
-    {
-        if (!$this->Specification->contains($specification)) {
-            $this->Specification[] = $specification;
-            $specification->setProduct($this);
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
         }
-
-        return $this;
     }
 
-    public function removeSpecification(Specification $specification): self
+    public function getImageFile(): ?File
     {
-        if ($this->Specification->removeElement($specification)) {
-            // set the owning side to null (unless already changed)
-            if ($specification->getProduct() === $this) {
-                $specification->setProduct(null);
-            }
-        }
-
-        return $this;
+        return $this->imageFile;
     }
 
-    public function getPrice(): ?string
+    public function setImageName(?string $imageName): void
     {
-        return $this->price;
+        $this->imageName = $imageName;
     }
 
-    public function setPrice(string $price): self
+    public function getImageName(): ?string
     {
-        $this->price = $price;
+        return $this->imageName;
+    }
 
-        return $this;
+    public function setImageSize(?int $imageSize): void
+    {
+        $this->imageSize = $imageSize;
+    }
+
+    public function getImageSize(): ?int
+    {
+        return $this->imageSize;
     }
 }

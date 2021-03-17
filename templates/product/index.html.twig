@@ -9,9 +9,11 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Prodname</th>
+                <th>Name</th>
+                <th>Price</th>
                 <th>Description</th>
-                <th>Img</th>
+                <th>ImageName</th>
+                <th>ImageSize</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,9 +21,11 @@
         {% for product in products %}
             <tr>
                 <td>{{ product.id }}</td>
-                <td>{{ product.prodname }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
                 <td>{{ product.description }}</td>
-                <td>{{ product.img }}</td>
+                <td>{{ product.imageName }}</td>
+{#                <td>{{ product.imageSize }}</td>#}
                 <td>
                     <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
                     <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
@@ -29,7 +33,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="7">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
