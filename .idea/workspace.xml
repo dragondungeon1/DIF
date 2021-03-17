@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0a19e4d-da33-4b9d-a85f-0b09a15dae78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/factuur/front.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615972546085</updated>
-      <workItem from="1615972547250" duration="7061000" />
+      <workItem from="1615972547250" duration="8692000" />
     </task>
     <task id="LOCAL-00001" summary="added fich uploader">
       <created>1615977308063</created>
@@ -166,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615977308063</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed the vich uploader and added an entity">
+      <created>1615983268768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615983268768</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,20 +178,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added fich uploader" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fich uploader" />
+    <MESSAGE value="fixed the vich uploader and added an entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the vich uploader and added an entity" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615982247963">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615982247963" />
-    <state x="499" y="114" key="CommitChangelistDialog2" timestamp="1615977307368">
+    <state x="499" y="114" key="CommitChangelistDialog2" timestamp="1615983268318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="499" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615977307368" />
+    <state x="499" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615983268318" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1615977312846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615977312846" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1615997353344">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615997353344" />
   </component>
 </project>
